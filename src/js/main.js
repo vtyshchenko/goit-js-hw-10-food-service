@@ -12,15 +12,15 @@ if (!uiTheme) {
   localStorage.setItem('ui-theme', Theme.LIGHT);
 }
 
-const body = document.getElementsByTagName('body')[0];
-const changeThemeCheckbox = document.getElementById('theme-switch-toggle');
-const menu = document.querySelector('.js-menu');
+const body = document.querySelector('body');
+const changeThemeCheckbox = body.querySelector('.theme-switch__toggle');
+const menuList = body.querySelector('.js-menu');
 
 body.classList.add(uiTheme);
 changeThemeCheckbox.checked = uiTheme === Theme.LIGHT ? false : true;
 
-const markup = menuTemplate(menuData);
-menu.insertAdjacentHTML('beforeend', markup);
+const menuMarkup = menuTemplate(menuData);
+menuList.insertAdjacentHTML('beforeend', menuMarkup);
 
 changeThemeCheckbox.addEventListener('click', onChangeTheme);
 
