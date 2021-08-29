@@ -22,7 +22,7 @@ changeThemeCheckbox.checked = uiTheme === Theme.LIGHT ? false : true;
 const menuMarkup = menuTemplate(menuData);
 menuList.insertAdjacentHTML('beforeend', menuMarkup);
 
-changeThemeCheckbox.addEventListener('click', onChangeTheme);
+changeThemeCheckbox.addEventListener('change', onChangeTheme);
 
 function onChangeTheme(event) {
   body.classList.toggle(Theme.DARK);
